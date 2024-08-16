@@ -1,0 +1,6 @@
+{
+    "saludo":"hola",
+    "log_level":"trace",
+    "log_name":"micropagos_smtp_server_",
+    "port":":2009"
+}

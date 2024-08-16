@@ -1,0 +1,22 @@
+[2024-08-16 10:46:27.855] [MicropagosSmtpServer] [main] [info] [] starting  micropagos smtp server version: 1.0.0
+[2024-08-16 10:46:27.856] [MicropagosSmtpServer] [main] [info] [] clossing...
+[2024-08-16 10:47:58.289] [MicropagosSmtpServer] [main] [info] [] starting  micropagos smtp server version: 1.0.0
+[2024-08-16 10:47:58.289] [MicropagosSmtpServer] [server] [info] [] Starting server on Port: 1234
+[2024-08-16 10:47:58.290] [MicropagosSmtpServer] [server] [error] [] cant connect to server: listen tcp: address 1234: missing port in address
+[2024-08-16 10:47:58.290] [MicropagosSmtpServer] [main] [error] [] error starting server: listen tcp: address 1234: missing port in address
+[2024-08-16 10:47:58.290] [MicropagosSmtpServer] [main] [info] [] clossing...
+[2024-08-16 10:56:56.006] [MicropagosSmtpServer] [main] [info] [] starting  micropagos smtp server version: 1.0.0
+[2024-08-16 10:56:56.006] [MicropagosSmtpServer] [server] [info] [] Starting server on Port: 2009
+[2024-08-16 10:56:56.006] [MicropagosSmtpServer] [server] [error] [] cant connect to server: listen tcp: address 2009: missing port in address
+[2024-08-16 10:56:56.006] [MicropagosSmtpServer] [main] [error] [] error starting server: listen tcp: address 2009: missing port in address
+[2024-08-16 10:56:56.006] [MicropagosSmtpServer] [main] [info] [] clossing...
+[2024-08-16 10:57:30.804] [MicropagosSmtpServer] [main] [info] [] starting  micropagos smtp server version: 1.0.0
+[2024-08-16 10:57:30.804] [MicropagosSmtpServer] [server] [info] [] Starting server on Port: :2009
+[2024-08-16 10:58:16.327] [MicropagosSmtpServer] [middleware] [info] [760d74f69b8d] New petition received
+[2024-08-16 10:58:16.327] [MicropagosSmtpServer] [middleware] [trace] [760d74f69b8d] url: /, method: GET
+[2024-08-16 10:58:16.328] [MicropagosSmtpServer] [handler] [info] [760d74f69b8d] starting handler welcome
+[2024-08-16 10:58:16.328] [MicropagosSmtpServer] [middleware] [info] [760d74f69b8d] Request took 534µs
+[2024-08-16 10:58:45.945] [MicropagosSmtpServer] [middleware] [info] [20ca5e26b6ce] New petition received
+[2024-08-16 10:58:45.945] [MicropagosSmtpServer] [middleware] [trace] [20ca5e26b6ce] url: /, method: GET
+[2024-08-16 10:58:45.945] [MicropagosSmtpServer] [handler] [info] [20ca5e26b6ce] starting handler welcome
+[2024-08-16 10:58:45.945] [MicropagosSmtpServer] [middleware] [info] [20ca5e26b6ce] Request took 710.7µs
