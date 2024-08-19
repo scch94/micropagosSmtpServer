@@ -27,13 +27,17 @@ type smtpData struct {
 }
 
 type mailInfo struct {
-	MailSender       string         `json:"mail_Sender"`
-	UbicationMessage string         `json:"ubication_message"`
-	Subject          string         `json:"subject"`
-	MailReceivers    []MailReceiver `json:"mail_Receibers"`
+	MailSender       string        `json:"mail_Sender"`
+	UbicationMessage string        `json:"ubication_message"`
+	Subject          string        `json:"subject"`
+	ClientsInfo      []ClientsInfo `json:"clients_info"`
 }
 
-type MailReceiver struct {
+type ClientsInfo struct {
+	Name          string          `json:"name"`
+	MailReceibers []MailReceibers `json:"mail_Receibers"`
+}
+type MailReceibers struct {
 	Email string `json:"email"`
 }
 
@@ -59,4 +63,19 @@ func (s smtpConfig) ConfigurationString() string {
 		return fmt.Sprintf("Error al convertir la configuración a JSON: %v", err)
 	}
 	return string(configJSON)
+}
+
+// metodo para devolver un arreglo de strings con los correos
+func (s smtpConfig) GetEmailsToSend(ctx context.Context, clientName string) []string {
+	ins_log.Infof(ctx, "starting to list the emails to send")
+	var recipients []string
+	for _, config := range s.MailInfo.ClientsInfo {
+		if clientName == config.Name {
+			for i, mailReceiber := range config.MailReceibers {
+				ins_log.Infof(ctx, "%d: %s", i+1, mailReceiber.Email)
+				recipients = append(recipients, mailReceiber.Email)
+			}
+		}
+	}
+	return recipients
 }

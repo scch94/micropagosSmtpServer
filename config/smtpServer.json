@@ -9,12 +9,173 @@
         "host_Name":"inswitch.com"
     },
     "mail_Info":{
-        "mail_Sender":"santiago.canal@digicelgroup.com",
+        "mail_Sender":"micropagosSender@inswitch.com",
         "ubication_message":"/opt/epin/applications/jkpi/resources/mail.html",
-        "subject":"micropagos testing",
-        "mail_Receibers":[
+        "subject":"[TESTING-MICROPAGOS] SMS enviado al ",
+        "clients_info":[
             {
-                "email":"santiago.canal@digicelgroup.com"
+                "name":"inswitch",
+                "mail_Receibers":[ 
+                    {
+                        "email":"santicanal1994@outlok.com"
+                    } 
+                ]
+            },
+            {
+                "name":"OCA",
+                "mail_Receibers":[ 
+                    {
+                        "email": "stefanyreboredo4@gmail.com"
+                    },
+                    {
+                        "email": "anavaleriae@hotmail.com"
+                    },
+                    {
+                        "email": "teamcertant@hotmail.com"
+                    },
+                    {
+                        "email": "claudia.lopez@these.com.uy"
+                    },
+                    {
+                        "email": "veronica.campistegui@oca.com.uy"
+                    },
+                    {
+                        "email": "jose.lopez@gsoft.com.uy"
+                    },
+                    {
+                        "email": "tomas.esteves@gsoft.com.uy"
+                    },
+                    {
+                        "email": "mauricio.arguelles@icloud.com"
+                    },
+                    {
+                        "email": "mathias.besil@gmail.com"
+                    },
+                    {
+                        "email": "jmarques@moonideas.com"
+                    },
+                    {
+                        "email": "dacosta@urudatasoftware.com"
+                    },
+                    {
+                        "email": "rossana.seimur@oca.com.uy"
+                    },
+                    {
+                        "email": "contact@madenlabs.com"
+                    },
+                    {
+                        "email": "jginzo@moonideas.com"
+                    },
+                    {
+                        "email": "elisa.aguerre@inswitch.com"
+                    },
+                    {
+                        "email": "stefanyreboredo2@gmail.com"
+                    },
+                    {
+                        "email": "mobileappstoken@outlook.com"
+                    },
+                    {
+                        "email": "dg_sms_qa@oca.com.uy"
+                    }
+                ]
+            },
+            {
+                "name": "Santander",
+                "mail_Receibers": [
+                    {
+                        "email": "elisa.aguerre@inswitch.com"
+                    },
+                    {
+                        "email": "UY_Santander_ICHB_Notificaciones@infocorpgroup.com"
+                    },
+                    {
+                        "email": "mandrada@santander.com.uy"
+                    }
+                ]
+            },
+            {
+                "name": "Banred",
+                "mail_Receibers": [
+                    {
+                        "email": "elisa.aguerre@inswitch.com"
+                    },
+                    {
+                        "email": "rfernandez@banred.com.uy"
+                    },
+                    {
+                        "email": "dpereira@banred.com.uy"
+                    },
+                    {
+                        "email": "rsalvagno@banred.com.uy"
+                    },
+                    {
+                        "email": "ramiro.garcia@northsystems.com.uy"
+                    },
+                    {
+                        "email": "mbeux@overactiveinc.com"
+                    },
+                    {
+                        "email": "mbesil@overactive.com"
+                    },
+                    {
+                        "email": "spintos@overactive.com"
+                    },
+                    {
+                        "email": "sistemas@bna.com.uy"
+                    },
+                    {
+                        "email": "lucia.gardella@perficient.com"
+                    },
+                    {
+                        "email": "juan.soler@perficient.com"
+                    },
+                    {
+                        "email": "carlos.torres@perficient.com"
+                    },
+                    {
+                        "email": "javier.morales@perficient.com"
+                    },
+                    {
+                        "email": "lucia.gardella@overactive.com"
+                    },
+                    {
+                        "email": "Juan.Soler@perficient.com"
+                    },
+                    {
+                        "email": "Daniel.Warner@perficient.com"
+                    },
+                    {
+                        "email": "Agustin.Odella@perficient.com"
+                    },
+                    {
+                        "email": "Luis.CamachoR@perficient.com"
+                    },
+                    {
+                        "email": "Sebastian.Pintos@perficient.com"
+                    },
+                    {
+                        "email": "Marcos.Lalinde@perficient.com"
+                    },
+                    {
+                        "email": "Rodrigo.Torres@perficient.com"
+                    },
+                    {
+                        "email": "Gianni.Sussalla@codere.com"
+                    },
+                    {
+                        "email": "Rodrigo.Torres@perficient.com"
+                    },
+                    {
+                        "email": "Marcos.Lalinde@perficient.com"
+                    },
+                    {
+                        "email": "Daiana.Santos@perficient.com"
+                    },
+                    {
+                        "email": "Catalina.VilladaA@perficient.com"
+                    }
+                ]
             }
         ]
     }
