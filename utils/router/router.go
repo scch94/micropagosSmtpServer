@@ -20,6 +20,7 @@ func SetupRouter(ctx context.Context) *gin.Engine {
 
 	h := handler.Handler{}
 	router.GET("/", h.Welcome)
+	router.POST("/send", h.SendEmail)
 
 	return router
 }

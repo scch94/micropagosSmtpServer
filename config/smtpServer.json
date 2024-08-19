@@ -2,5 +2,20 @@
     "saludo":"hola",
     "log_level":"trace",
     "log_name":"micropagos_smtp_server_",
-    "port":":2009"
+    "port":":2009",
+    "smtp_Data":{
+        "smtp_Host":"localhost",
+        "smtp_Port":"25",
+        "host_Name":"inswitch.com"
+    },
+    "mail_Info":{
+        "mail_Sender":"santiago.canal@digicelgroup.com",
+        "ubication_message":"/opt/epin/applications/jkpi/resources/mail.html",
+        "subject":"micropagos testing",
+        "mail_Receibers":[
+            {
+                "email":"santiago.canal@digicelgroup.com"
+            }
+        ]
+    }
 }

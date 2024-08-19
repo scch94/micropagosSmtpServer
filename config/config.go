@@ -12,10 +12,29 @@ import (
 var Config smtpConfig
 
 type smtpConfig struct {
-	Saludo   string `json:"saludo"`
-	LogLevel string `json:"log_Level"`
-	LogName  string `json:"log_Name"`
-	Port     string `json:"port"`
+	Saludo   string   `json:"saludo"`
+	LogLevel string   `json:"log_Level"`
+	LogName  string   `json:"log_Name"`
+	Port     string   `json:"port"`
+	SmtpData smtpData `json:"smtp_Data"`
+	MailInfo mailInfo `json:"mail_Info"`
+}
+
+type smtpData struct {
+	SmtpHost string `json:"smtp_Host"`
+	SmtpPort string `json:"smtp_Port"`
+	HostName string `json:"host_Name"`
+}
+
+type mailInfo struct {
+	MailSender       string         `json:"mail_Sender"`
+	UbicationMessage string         `json:"ubication_message"`
+	Subject          string         `json:"subject"`
+	MailReceivers    []MailReceiver `json:"mail_Receibers"`
+}
+
+type MailReceiver struct {
+	Email string `json:"email"`
 }
 
 func Upconfig(ctx context.Context) error {
