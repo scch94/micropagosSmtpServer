@@ -3,6 +3,7 @@ package request
 import (
 	"context"
 	"encoding/hex"
+	"strings"
 
 	"github.com/scch94/ins_log"
 )
@@ -31,12 +32,12 @@ type SendEmailRequest struct {
 }
 
 // metodo para devolver eldata exe como un string
-func (info SendEmailRequest) GetMessage(ctx context.Context) (string, error) {
+func (request SendEmailRequest) GetMessage(ctx context.Context) (string, error) {
 
-	ins_log.Tracef(ctx, "starting to change de hexa string in a normal text - hexa= ", info.Data)
+	ins_log.Tracef(ctx, "starting to change de hexa string in a normal text - hexa= ", request.Data)
 
 	//convertir la caeda hexadecimal a bytes
-	bytes, err := hex.DecodeString(info.Data)
+	bytes, err := hex.DecodeString(request.Data)
 	if err != nil {
 		ins_log.Errorf(ctx, "error when we try to decode de hexa string err: %v", err)
 		return "", err
@@ -47,4 +48,15 @@ func (info SendEmailRequest) GetMessage(ctx context.Context) (string, error) {
 
 	return message, nil
 
+}
+
+// metodo que devuelve el origin nummber en formato normal y no internacional
+func (request SendEmailRequest) GetDestination() string {
+	var destination string
+	if strings.HasPrefix(request.DestinationNumber, "598") {
+		destination = "0" + request.DestinationNumber[3:]
+	} else {
+		destination = request.DestinationNumber
+	}
+	return destination
 }

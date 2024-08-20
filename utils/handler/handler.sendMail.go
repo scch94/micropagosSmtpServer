@@ -39,6 +39,7 @@ func (handler *Handler) SendEmail(c *gin.Context) {
 	ctx = ins_log.SetUTFIInContext(ctx, emailRequest.Utfi)
 	ins_log.Info(ctx, "new petition to send email received")
 
+	//generamos el html q sera enviado
 	formaterBody, err := generateHTML(ctx, emailRequest)
 	if err != nil {
 		ins_log.Errorf(ctx, "Error in the function generateHTML() err:%v", err)
@@ -47,6 +48,7 @@ func (handler *Handler) SendEmail(c *gin.Context) {
 		return
 	}
 
+	//creamos el servidor smtp q usaremos apra enviar el correo
 	client, err := getSmtpClient(ctx, emailRequest)
 	if err != nil {
 		ins_log.Errorf(ctx, "Error in the function getSmtpClient()  err:%v", err)
@@ -55,6 +57,7 @@ func (handler *Handler) SendEmail(c *gin.Context) {
 		return
 	}
 
+	//enviaremos el correo y cerraremos el smtpclient
 	err = writeAndSendEmail(ctx, formaterBody, client)
 	if err != nil {
 		ins_log.Errorf(ctx, "Error in the function writeAndSendEmail() err:%v", err)
@@ -66,6 +69,7 @@ func (handler *Handler) SendEmail(c *gin.Context) {
 	ins_log.Infof(ctx, "Email sent successfully!")
 
 	response := response.NewSendEmailResponse(STATUSOK, FORWARDREF, DESCRIPTIONOK)
+
 	c.JSON(http.StatusOK, response)
 }
 
@@ -86,7 +90,6 @@ func getSmtpClient(ctx context.Context, requestEmail request.SendEmailRequest) (
 		ins_log.Errorf(ctx, "Error when we try to connect with the SMTP server: %s ", err)
 		return nil, err
 	}
-	defer client.Close()
 
 	ins_log.Debug(ctx, "conectted to de smtp server")
 
@@ -130,9 +133,9 @@ func generateHTML(ctx context.Context, requestEmail request.SendEmailRequest) ([
 
 	// recuperamos los valores del request que usaremos
 	origen := requestEmail.OriginNumber
-	destino := requestEmail.DestinationNumber
+	destino := requestEmail.GetDestination()
 	telco := requestEmail.TLVValue
-	subject := configuration.MailInfo.Subject + requestEmail.DestinationNumber
+	subject := configuration.MailInfo.Subject + destino
 
 	//traemos los correos a los que enviaremos el correo y generamos el strin concatenado que usaremos en formatedbody como to
 	recipients := configuration.GetEmailsToSend(ctx, requestEmail.Client)
@@ -181,7 +184,7 @@ func generateHTML(ctx context.Context, requestEmail request.SendEmailRequest) ([
 }
 
 func writeAndSendEmail(ctx context.Context, formaterBody []byte, client *smtp.Client) error {
-
+	defer client.Close()
 	ins_log.Infof(ctx, "starting to send email ")
 
 	// Start writing the message (DATA)
