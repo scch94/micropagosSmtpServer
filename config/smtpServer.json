@@ -1,7 +1,7 @@
 {
     "saludo":"hola",
     "log_level":"trace",
-    "log_name":"micropagos_smtp_server_",
+    "log_name":"micropagosSmtpServer",
     "port":":2009",
     "smtp_Data":{
         "smtp_Host":"localhost",

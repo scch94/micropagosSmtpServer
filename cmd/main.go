@@ -56,10 +56,10 @@ func initializeAndWatchLogger(ctx context.Context) {
 			}
 
 			// Define the log file name
-			today := time.Now().Format("2006-01-02 15")
+			today := time.Now().Format("2006010215")
 			replacer := strings.NewReplacer(" ", "_")
 			today = replacer.Replace(today)
-			logFileName = filepath.Join(logDir, config.Config.LogName+today+".log")
+			logFileName = filepath.Join(logDir, today+config.Config.LogName+".log")
 
 			// Open the log file
 			file, err = os.OpenFile(logFileName, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)

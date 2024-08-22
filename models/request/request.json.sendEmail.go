@@ -34,7 +34,8 @@ type SendEmailRequest struct {
 // metodo para devolver eldata exe como un string
 func (request SendEmailRequest) GetMessage(ctx context.Context) (string, error) {
 
-	ins_log.Tracef(ctx, "starting to change de hexa string in a normal text - hexa= ", request.Data)
+	ctx = ins_log.SetPackageNameInContext(ctx, "request")
+	ins_log.Tracef(ctx, "starting to change de hexa string in a normal text - hexa: %v", request.Data)
 
 	//convertir la caeda hexadecimal a bytes
 	bytes, err := hex.DecodeString(request.Data)

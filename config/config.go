@@ -67,7 +67,7 @@ func (s smtpConfig) ConfigurationString() string {
 
 // metodo para devolver un arreglo de strings con los correos
 func (s smtpConfig) GetEmailsToSend(ctx context.Context, clientName string) []string {
-	ins_log.Infof(ctx, "starting to list the emails to send")
+	ins_log.Infof(ctx, "starting to list the emails to send ")
 	var recipients []string
 	for _, config := range s.MailInfo.ClientsInfo {
 		if clientName == config.Name {
